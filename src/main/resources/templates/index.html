@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="/css/tailwindcssout.css" rel="stylesheet">
+</head>
+<body class="h-fit">
+<header>
+    <div class="py-5 text-center">
+        <sub class="text-base tracking-[0.5rem]">Composer&nbsp;/&nbsp;Game&nbsp;Engineer</sub>
+        <h1 class="text-2xl indent-8 tracking-widest">齋藤寿将</h1>
+        <sub class="text-base indent-7 tracking-wide">Saito&nbsp;Kazumasa</sub>
+    </div>
+    <div class="text-center">
+        <sub class="text-base">YouTube:&nbsp;<a href="https://www.youtube.com/@saitokazumasa3" class="text-interactable">@saitokazumasa3</a>&nbsp;/&nbsp;</sub>
+        <sub class="text-base">X(Twitter):&nbsp;<a href="https://x.com/saitokazumasa3" class="text-interactable">@saitokazumasa3</a></sub>
+    </div>
+</header>
+
+<main>
+    <div class="mt-20">
+        <h2 class="text-lg">Music&nbsp;<span class="text-base font-light">制作した楽曲</span></h2>
+        <div class="mt-4 grid gap-4 grid-cols-2">
+            <a href="https://x.com/saitokazumasa3/status/1869646555122483283">
+                <img class="rounded-md"
+                     src="/images/yobanashi-thumnail.png"
+                     alt="よばなしサムネイル">
+            </a>
+            <th:block
+                    th:replace="~{fragments/youtube::youtube('https://www.youtube.com/embed/?list=UUvwuiaRdzQqiWQQVjnV1asg')}"></th:block>
+            <th:block
+                    th:replace="~{fragments/youtube::youtube('https://www.youtube.com/embed/wsVS04asqB4')}"></th:block>
+            <th:block
+                    th:replace="~{fragments/youtube::youtube('https://www.youtube.com/embed/AmPbisG56_Q')}"></th:block>
+        </div>
+    </div>
+
+    <div class="mt-20">
+        <h2 class="text-lg">Game&nbsp;<span class="text-base font-light">制作に参加したゲーム</span></h2>
+        <div class="mt-4 grid gap-4 grid-cols-2">
+            <th:block
+                    th:replace="~{fragments/steam :: steam('https://store.steampowered.com/widget/2073050/')}"></th:block>
+            <th:block
+                    th:replace="~{fragments/steam :: steam('https://store.steampowered.com/widget/2502940/')}"></th:block>
+        </div>
+    </div>
+
+    <div class="mt-20">
+        <h2 class="text-lg">Contact&nbsp;<span class="text-base font-light">お問い合わせフォーム</span></h2>
+        <form th:action="@{/index}" method="post" th:object="${mailForm}">
+            <div class="mt-4">
+                <label for="email" class="text-sm font-light">メールアドレス&nbsp;*</label>
+                <div th:errors="*{emailAddress}" class="text-sm text-danger"></div>
+                <input type="email" th:field="*{emailAddress}" placeholder="メールアドレスを入力" id="email"
+                       class="w-full mt-2 px-3 py-2 text-base rounded-md placeholder:text-sm focus:outline-none">
+            </div>
+            <div class="mt-4">
+                <label for="subject" class="text-sm font-light">件名&nbsp;*</label>
+                <div th:errors="*{subject}" class="text-sm text-danger"></div>
+                <input type="text" th:field="*{subject}" placeholder="件名を入力" id="subject"
+                       class="w-full mt-2 px-3 py-2 text-base rounded-md placeholder:text-sm focus:outline-none">
+            </div>
+            <div class="mt-4">
+                <label for="content" class="text-sm font-light">内容&nbsp;*</label>
+                <div th:errors="*{content}" class="text-sm text-danger"></div>
+                <textarea th:field="*{content}" placeholder="内容を入力" id="content"
+                          class="w-full mt-2 px-3 py-2 text-base rounded-md placeholder:text-sm focus:outline-none"
+                ></textarea>
+            </div>
+            <div class="mt-6">
+                <button class="block w-1/3 h-full py-2 mx-auto text-secondary bg-interactable rounded-full">送信</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="w-full mt-32 mb-5 text-center">
+        <p class="font-light">&copy;&nbsp;Copyright&nbsp;2024&nbsp;さいとうかずまさ</p>
+    </div>
+</footer>
+</body>
+</html>
