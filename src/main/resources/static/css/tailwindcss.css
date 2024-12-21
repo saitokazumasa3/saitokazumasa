@@ -27,6 +27,13 @@ main {
     margin: 0 auto;
 }
 
+footer {
+    width: 50%;
+    min-width: 700px;
+    max-width: 3840px;
+    margin: 0 auto;
+}
+
 h1 {
     font-family: "Noto Serif JP", serif;
     font-weight: 700;
