@@ -1,12 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    mode: "jit",
     content: ["./src/main/resources/**/*.{html,js}"],
     theme: {
         extend: {
             colors: {
                 "primary": "#316785",
+                "sub-primary": "#eff4fb",
                 "secondary": "#c6d4e1",
                 "interactable": "#5897bd",
+                "success": "#3b9e34",
                 "danger": "#b33939",
             }
         },

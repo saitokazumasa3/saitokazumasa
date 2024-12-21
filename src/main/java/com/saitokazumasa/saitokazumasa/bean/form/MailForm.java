@@ -4,12 +4,14 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class MailForm {
     @NotBlank(message = "メールアドレスを入力してください")
-    @Email
+    @Email(message = "有効なメールアドレスを入力してください")
     private String emailAddress;
 
     @NotBlank(message = "件名を入力してください")
