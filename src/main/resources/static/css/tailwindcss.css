@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    width: 100vw;
+
+    color: #316785;
+    font-family: "Noto Sans JP", sans-serif;
+
+    background-color: #c6d4e1;
+}
+
+header {
+    width: 50%;
+    min-width: 700px;
+    max-width: 3840px;
+    margin: 0 auto;
+}
+
+main {
+    width: 50%;
+    min-width: 700px;
+    max-width: 3840px;
+    margin: 0 auto;
+}
+
+footer {
+    width: 50%;
+    min-width: 700px;
+    max-width: 3840px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 700;
+}
+
+sub {
+    font-weight: 300;
+}

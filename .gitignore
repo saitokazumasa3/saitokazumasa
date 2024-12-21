@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Tailwind CSS ###
+node_modules/
+src/main/resources/static/css/tailwindcssout.css
