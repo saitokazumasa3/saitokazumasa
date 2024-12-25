@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
-<th:block th:replace="fragments/head::head" />
+<th:block th:replace="fragments/head::head"/>
 <body>
 
-<div th:if="${message}" id="message-box"
-     class="absolute top-5 left-1/2 z-50 w-1/3 min-w-[500px] -translate-x-1/2 bg-white rounded-lg shadow-2xl">
-    <p class="py-5 text-base text-center text-success">●&nbsp;<span th:text="${message}">メールが送信されました</span>
-    </p>
-</div>
-
-<th:block th:replace="fragments/header::header" />
+<th:block th:replace="fragments/header::header"/>
 
 <main>
     <div class="mt-20">
@@ -38,6 +32,14 @@
                     th:replace="~{fragments/steam :: steam('https://store.steampowered.com/widget/2073050/')}"></th:block>
         </div>
     </div>
+
+    <div th:if="${message}" id="message-box"
+         class="absolute top-5 left-1/2 z-50 w-1/3 min-w-[500px] -translate-x-1/2 bg-white rounded-lg shadow-2xl">
+        <p class="py-5 text-base text-center text-success">●&nbsp;<span
+                th:text="${message}">メールが送信されました</span>
+        </p>
+    </div>
+    <script src="/javascripts/message-animation.js" type="application/javascript"></script>
 
     <div class="mt-20">
         <h2 class="text-lg">Contact&nbsp;<span class="text-base font-light">お問い合わせフォーム</span></h2>
@@ -70,8 +72,7 @@
     </div>
 </main>
 
-<th:block th:replace="fragments/footer" />
+<th:block th:replace="fragments/footer"/>
 
-<script src="/javascripts/message-animation.js" type="application/javascript"></script>
 </body>
 </html>

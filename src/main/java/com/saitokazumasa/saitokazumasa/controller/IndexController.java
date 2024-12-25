@@ -36,7 +36,7 @@ public class IndexController {
     ) throws MessagingException {
         if (bindingResult.hasErrors()) return "index";
 
-        sendMailService.execute(mailForm);
+        this.sendMailService.execute(mailForm);
 
         redirectAttributes.addFlashAttribute("message", "メールを送信しました");
         return "redirect:/";
