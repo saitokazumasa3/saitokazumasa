@@ -1,7 +1,7 @@
 package com.saitokazumasa.saitokazumasa.service.implement;
 
 import com.saitokazumasa.saitokazumasa.bean.form.MailForm;
-import com.saitokazumasa.saitokazumasa.service.ISendMailService;
+import com.saitokazumasa.saitokazumasa.service.ISendMail;
 import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -9,12 +9,12 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SendMailService implements ISendMailService {
+public class SendMail implements ISendMail {
     @Value("${spring.mail.username}")
     private String ServerMailAddress;
     private final JavaMailSender mailSender;
 
-    public SendMailService(final JavaMailSender mailSender) {
+    public SendMail(final JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
 

@@ -1,7 +1,7 @@
 package com.saitokazumasa.saitokazumasa.controller;
 
 import com.saitokazumasa.saitokazumasa.bean.form.MailForm;
-import com.saitokazumasa.saitokazumasa.service.ISendMailService;
+import com.saitokazumasa.saitokazumasa.service.ISendMail;
 import jakarta.mail.MessagingException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,10 +15,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @RequestMapping({"", "/", "/index"})
 public class IndexController {
-    private final ISendMailService sendMailService;
+    private final ISendMail sendMail;
 
-    public IndexController(final ISendMailService sendMailService) {
-        this.sendMailService = sendMailService;
+    public IndexController(final ISendMail sendMail) {
+        this.sendMail = sendMail;
     }
 
     @GetMapping
@@ -36,7 +36,7 @@ public class IndexController {
     ) throws MessagingException {
         if (bindingResult.hasErrors()) return "index";
 
-        sendMailService.execute(mailForm);
+        this.sendMail.execute(mailForm);
 
         redirectAttributes.addFlashAttribute("message", "メールを送信しました");
         return "redirect:/";
